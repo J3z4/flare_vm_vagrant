@@ -1,0 +1,28 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.require_version ">= 1.6.2"
+
+Vagrant.configure("2") do |config|
+    config.vm.define "vagrant-windows-10-preview"
+    config.vm.box = "windows_10_preview"
+    config.vm.communicator = "winrm"
+
+    # Admin user name and password
+    config.winrm.username = "analyst"
+    config.winrm.password = "infected"
+
+    config.vm.guest = :windows
+    config.windows.halt_timeout = 15
+    
+    config.vm.provider "vmware_desktop" do |vb|
+      vb.gui = true
+      # Customize the amount of memory on the VM:
+      vb.memory = "4096"
+      vb.vmx["virtualhw.version"] = "20"
+      vb.vmx["displayname"] = "FlareVM"
+      vb.vmx["sharedFolder0.present"] = "False"
+      vb.vmx["sharedFolder0.enabled"] = "False"  
+    end
+    
+end

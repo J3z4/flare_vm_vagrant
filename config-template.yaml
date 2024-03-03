@@ -1,0 +1,8 @@
+stack_name: "MalLab-Demo"
+
+sample_src_path: "https://github.com/HuskyHacks/PMAT-labs/archive/refs/heads/main.zip"
+sample_dest_path: "C:\\Users\\analyst\\Desktop\\PMAT-labs.zip"
+
+flare_vm_box_version: "1.0.0"
+flare_vm_memory: 8192
+flare_vm_cpus: 4
